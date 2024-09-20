@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+:root{
+    --font:"Titillium Web", sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font);
+}
+
+body{
+    background-color:  rgb(0, 157, 255);
+    overflow: hidden;
+}
+
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 15rem;
+    width: 25rem;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: aliceblue;
+    box-shadow: 0px 3px 10px 1px gray;
+    border-radius: 8px;
+    transition: height 0.2s ease;
+}
+
+header{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    background:linear-gradient(45deg,red,blue);
+    background-clip: text;
+    color: transparent;
+}
+
+#inputSection{
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 1.1rem;
+}
+
+#inputSection>input{
+    all: unset;
+    height: 3rem;
+    width: auto;
+    border: 2px solid gray;
+    border-radius: 5px;
+    padding: 0 1rem;
+}
+
+#inputSection>button , 
+#qrCodeSection>#downloadSection>button{
+    height: 2.8rem;
+    width: auto;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    background-color: rgb(0, 157, 255);
+    color: aliceblue;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    position: relative;
+}
+
+#qrCodeSection{
+    display: flex;
+    flex-direction: column;
+    max-height: fit-content;
+    width: 100%;
+    gap: 1rem;
+    transition: all 0.1s ease-in-out;
+    position: relative;
+}
+
+#qrCodeSection>#downloadSection>button>a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    color: aliceblue;
+    padding-top: 0.5rem; ;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#qrCodeSection>.QRImg{
+    height: 10rem;
+    width: 10rem;
+    align-self: center;
+}
+
+#qrCodeSection>#downloadSection{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#qrCodeSection>#downloadSection>button{
+    width: 68%;
+}
+
+#qrCodeSection>#downloadSection>#Select{
+    color:  rgb(0, 157, 255);
+    background-color: aliceblue;
+    border: 2px solid gray;
+    width: 30%;
+}
+
+#qrCodeSection>#fileTypes{
+    width: 9rem;
+    position: absolute;
+    right: -41%;
+    top: 50%;
+    background-color: aliceblue;
+    border-radius: 5px;
+    box-shadow: 0px 3px 10px 1px gray;
+    padding: 0.5rem;
+}
+
+#qrCodeSection>#fileTypes>p{
+    padding: 0.3rem;
+    text-align: center;
+    border-radius: 5px;
+}
+
+#qrCodeSection>#fileTypes>p:hover{
+    cursor: pointer;
+    background-color: rgb(184, 195, 200);
+}
+
+.show{
+    opacity: 1;
+    pointer-events: all;
+}
+
+.hide{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.displayOpen{
+    height: 29.5rem;
+}
+
+@media only screen and (max-width:600px){
+    header{
+        font-size: 2.2rem;
+    }
+    .container{
+        position: absolute;
+        top: 42%;
+        left: 50%;
+        transform: translate(-50% , -50%);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 20rem;
+    }
+    #qrCodeSection>#fileTypes{
+        width: 9rem;
+        position: absolute;
+        right: 0%;
+        top: 110%;
+        background-color: aliceblue;
+        border-radius: 5px;
+        box-shadow: 0px 3px 10px 1px gray;
+        padding: 0.5rem;
+    }
+
+    #qrCodeSection>#downloadSection>button{
+        width: 55%;
+    }
+
+    #qrCodeSection>#downloadSection>#Select{
+        width: 40%;
+    }
+    
+}
